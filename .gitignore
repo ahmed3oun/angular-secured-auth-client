@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-/angular-12-refresh-token-jwt-interceptor-example.png
+
 
 # profiling files
 chrome-profiler-events*.json
