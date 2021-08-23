@@ -1,0 +1,80 @@
+<div id="app">
+  <!--<nav class="navbar navbar-expand navbar-dark bg-dark">-->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-bg-color-dark-grey">
+    <a href="#" class="navbar-brand mb-0 h1"
+      ><span class="placeholder-glow">SITE BRAND</span></a
+    >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a
+          href="/home"
+          class="nav-link"
+          routerLink="home"
+          routerLinkActive="active"
+          >Home
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a
+          href="/admin"
+          class="nav-link"
+          routerLink="admin"
+          routerLinkActive="active"
+          >Admin Board</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          href="/user"
+          class="nav-link"
+          *ngIf="isLoggedIn"
+          routerLink="user"
+          routerLinkActive="active"
+          >User</a
+        >
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a
+          href="/register"
+          class="nav-link"
+          routerLink="register"
+          routerLinkActive="active"
+          >Sign Up</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          href="/login"
+          class="nav-link"
+          routerLink="login"
+          routerLinkActive="active"
+          >Login</a
+        >
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a
+          href="/profile"
+          class="nav-link"
+          routerLink="profile"
+          routerLinkActive="active"
+          >{{ username }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
